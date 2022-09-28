@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dicoding.habitapp">
+
+    <application
+        android:name=".HabitApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HabitApp"
+        tools:ignore="AllowBackup">
+        <activity android:name=".ui.countdown.CountDownActivity"
+            android:parentActivityName=".ui.list.HabitListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.list.HabitListActivity" />
+        </activity>
+        <activity
+            android:name=".ui.random.RandomHabitActivity"
+            android:label="@string/title_activity_random"
+            android:parentActivityName=".ui.list.HabitListActivity"
+            android:theme="@style/Theme.HabitApp.NoActionBar" />
+        <activity
+            android:name=".ui.detail.DetailHabitActivity"
+            android:label="@string/title_activity_detail_habit"
+            android:parentActivityName=".ui.list.HabitListActivity"
+            android:theme="@style/Theme.HabitApp.NoActionBar" />
+        <activity
+            android:name=".setting.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".ui.list.HabitListActivity" />
+        <activity android:name=".ui.add.AddHabitActivity" />
+        <activity
+            android:name=".ui.list.HabitListActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.HabitApp.NoActionBar"
+            android:launchMode="singleTop"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
